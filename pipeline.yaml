@@ -5,7 +5,9 @@ steps:
   - docker#v5.12.0:
       image: "python:3.13"
       debug: true
-      command: [ "python", "--version" ]
+      command: [ "python", "-c", "import loremipsum; print(loremipsum.sentence(max_char=20), file=open('result.txt', 'w'))" ]
+    artifact_paths:
+    - "result.txt"
 
 # - label: "Annotate Sentence"
 #   command: "buildkite-agent annotate --style info \"$(cat result.txt)\""
