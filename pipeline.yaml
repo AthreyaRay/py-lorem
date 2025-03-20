@@ -2,7 +2,7 @@ steps:
 - label: "Generate Short Sentence"
   key: 'abc'
   plugins:
-  - docker#v5.3.0:
+  - docker#v5.12.0:
       image: "python:3.13"
       command: [ "python", "--version" ]
 
